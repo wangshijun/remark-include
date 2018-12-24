@@ -3,11 +3,15 @@ var path = require('path')
 var fs = require('fs')
 
 var parseInclude = /^@include (.*)(\n|$)/
+var defaultInclude = function(root) {
+  return root.children;
+};
 
 module.exports = function (options) {
   var proc = this;
   options = options || {}
   var cwd = options.cwd || process.cwd()
+  var onInclude = options.onInclude || defaultInclude
 
   var prt = proc.Parser.prototype
   prt.blockTokenizers.include = tokenizer
@@ -32,7 +36,7 @@ module.exports = function (options) {
         // Split and merge the head and tail around the new children
         var head = children.slice(0, i)
         var tail = children.slice(i + 1)
-        children = head.concat(root.children).concat(tail)
+        children = head.concat(onInclude(root).children).concat(tail)
 
         // Remember to update the offset!
         i += root.children.length - 1

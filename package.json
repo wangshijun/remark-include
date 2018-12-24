@@ -1,17 +1,17 @@
 {
-  "name": "remark-include",
+  "name": "@arcblock/remark-include",
   "version": "2.0.0",
   "description": "Transform @include statements to contents",
   "main": "index.js",
   "author": "Stephen Belanger <admin@stephenbelanger.com>",
   "license": "MIT",
-  "homepage": "https://github.com/Qard/remark-include#readme",
+  "homepage": "https://github.com/wangshijun/remark-include#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Qard/remark-include.git"
+    "url": "git+https://github.com/wangshijun/remark-include.git"
   },
   "bugs": {
-    "url": "https://github.com/Qard/remark-include/issues"
+    "url": "https://github.com/wangshijun/remark-include/issues"
   },
   "directories": {
     "test": "test"
